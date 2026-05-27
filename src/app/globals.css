@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAF9F7;
+    color: #1A1714;
+    font-family: var(--font-inter);
+  }
+
+  ::selection {
+    background-color: #1A1714;
+    color: #FAF9F7;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F5F0E8;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #9E9188;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .writing-mode-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-3 bg-ink text-off-white px-8 py-4 text-xs tracking-ultra uppercase font-sans font-medium transition-all duration-300 hover:bg-charcoal hover:gap-4;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-3 border border-ink text-ink px-8 py-4 text-xs tracking-ultra uppercase font-sans font-medium transition-all duration-300 hover:bg-ink hover:text-off-white hover:gap-4;
+  }
+
+  .section-label {
+    @apply text-xs tracking-ultra uppercase font-sans text-warm-gray;
+  }
+
+  .section-title {
+    @apply font-serif text-4xl md:text-5xl lg:text-6xl text-ink leading-tight;
+  }
+
+  .nav-link {
+    @apply text-xs tracking-ultra uppercase font-sans transition-colors duration-200;
+  }
+}
